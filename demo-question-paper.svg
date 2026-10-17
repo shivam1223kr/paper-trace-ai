@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1754" viewBox="0 0 1240 1754">
+  <rect width="1240" height="1754" fill="#fffdf7"/>
+  <rect x="65" y="65" width="1110" height="1624" rx="5" fill="none" stroke="#1d3031" stroke-width="4"/>
+  <text x="620" y="155" text-anchor="middle" font-family="Arial" font-size="30" font-weight="bold" fill="#182a2b">RIVERDALE COLLEGE OF ENGINEERING</text>
+  <text x="620" y="205" text-anchor="middle" font-family="Arial" font-size="22" fill="#182a2b">FINAL EXAMINATION · MATHEMATICS III</text>
+  <line x1="110" y1="240" x2="1130" y2="240" stroke="#1d3031" stroke-width="2"/>
+  <text x="120" y="285" font-family="Arial" font-size="18" fill="#182a2b">Course code: MAT-301</text><text x="880" y="285" font-family="Arial" font-size="18" fill="#182a2b">Duration: 3 hours</text>
+  <text x="120" y="345" font-family="Arial" font-size="21" font-weight="bold" fill="#182a2b">Instructions</text>
+  <text x="120" y="385" font-family="Arial" font-size="18" fill="#26383a">1. Answer all questions.  2. Show complete working.  3. Calculators are not permitted.</text>
+  <text x="120" y="465" font-family="Arial" font-size="21" font-weight="bold" fill="#182a2b">Section A — Answer all questions</text>
+  <text x="120" y="525" font-family="Arial" font-size="19" fill="#182a2b">1. Solve the differential equation: dy/dx + 2y = e⁻ˣ. [10]</text>
+  <text x="120" y="605" font-family="Arial" font-size="19" fill="#182a2b">2. Find the eigenvalues of the matrix  [ 2  1 ; 1  2 ]. [10]</text>
+  <text x="120" y="685" font-family="Arial" font-size="19" fill="#182a2b">3. Evaluate ∫₀¹ x²/(1+x) dx. [10]</text>
+  <text x="120" y="790" font-family="Arial" font-size="21" font-weight="bold" fill="#182a2b">Section B — Answer any two questions</text>
+  <text x="120" y="850" font-family="Arial" font-size="19" fill="#182a2b">4. Explain the Laplace transform and find L{sin 3t}. [15]</text>
+  <text x="120" y="930" font-family="Arial" font-size="19" fill="#182a2b">5. Use Newton-Raphson method to find a root of x³ − x − 1 = 0. [15]</text>
+  <text x="120" y="1010" font-family="Arial" font-size="19" fill="#182a2b">6. Find the Fourier series for f(x) = x, −π &lt; x &lt; π. [15]</text>
+  <text x="620" y="1615" text-anchor="middle" font-family="Arial" font-size="13" fill="#718282">CONFIDENTIAL · Sample paper for PaperTrace AI demonstration</text>
+</svg>

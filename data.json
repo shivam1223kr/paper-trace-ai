@@ -1,0 +1,143 @@
+{
+  "papers": [
+    {
+      "id": "EXAM-B6B008",
+      "title": "Demo Mathematics Paper",
+      "subject": "MAT-301",
+      "examDate": "",
+      "createdAt": "2026-10-16T17:47:13.523Z",
+      "fingerprint": null
+    }
+  ],
+  "copies": [
+    {
+      "id": "CP-779657",
+      "paperId": "EXAM-B6B008",
+      "recipient": "Teacher B",
+      "department": "Faculty",
+      "status": "Issued",
+      "issuedAt": "2026-10-16T17:47:13.542Z",
+      "token": "4521138a62155a50",
+      "signature": "C9B57C0EAF8AD06A"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "CASE-FACA07",
+      "at": "2026-10-16T17:47:13.549Z",
+      "fileName": "phone-photo-demo.jpg",
+      "evidenceHash": null,
+      "mlAnalysis": {
+        "confidence": 87,
+        "captureType": "Phone-camera photograph"
+      },
+      "paperId": "EXAM-B6B008",
+      "copyId": "CP-779657",
+      "watermarkScore": 91,
+      "documentScore": 86,
+      "evidence": [
+        "ML capture classifier: Phone-camera photograph (87%)",
+        "Signed copy pattern recovered",
+        "Paper visual match"
+      ],
+      "status": "Potential copy match"
+    },
+    {
+      "id": "CASE-84DF82",
+      "at": "2026-10-16T17:30:56.912Z",
+      "fileName": "OIP.webp",
+      "evidenceHash": "a8e467fb6486a222e1ce0c1644b1f7b351b6bbd4072baff9c3f9fe06f78aca60",
+      "mlAnalysis": {
+        "captureType": "Scanned / printed page",
+        "confidence": 61,
+        "features": [
+          0.951,
+          0.083,
+          0.061,
+          0.018,
+          0.028
+        ]
+      },
+      "paperId": null,
+      "copyId": null,
+      "watermarkScore": 0,
+      "documentScore": 0,
+      "evidence": [
+        "ML capture classifier: Scanned / printed page (61% confidence)",
+        "No recoverable copy signature",
+        "No registered visual fingerprint match"
+      ],
+      "status": "Paper identified — source unresolved"
+    },
+    {
+      "id": "CASE-1682ED",
+      "at": "2026-10-16T17:25:17.248Z",
+      "fileName": "ml-test-camera.jpg",
+      "evidenceHash": null,
+      "mlAnalysis": {
+        "features": [
+          0.56,
+          0.25,
+          0.31,
+          0.13,
+          0.11
+        ],
+        "captureType": "Phone-camera photograph",
+        "confidence": 87
+      },
+      "paperId": null,
+      "copyId": null,
+      "watermarkScore": 90,
+      "documentScore": 84,
+      "evidence": [
+        "ML test"
+      ],
+      "status": "Paper identified — source unresolved"
+    }
+  ],
+  "audit": [
+    {
+      "id": "AUD-E275ED",
+      "at": "2026-10-16T17:47:13.549Z",
+      "action": "Leak analysis recorded",
+      "detail": "CASE-FACA07: Potential copy match",
+      "previousHash": "88d095d67f3cf26106f3d14cb2f84dadee801b275a9b005bb5cf7ef17b01e02b",
+      "hash": "e471c098fdabd1126d6de5c6088ed5b307809e3b0d3e33d2c4bbd5933e3d07cf"
+    },
+    {
+      "id": "AUD-26E1E1",
+      "at": "2026-10-16T17:47:13.542Z",
+      "action": "Personalised copy issued",
+      "detail": "CP-779657 issued to Teacher B",
+      "previousHash": "1c0d351cc710ef63203bceae846f4fe187cf41807de774338de7d8a9c697f635",
+      "hash": "88d095d67f3cf26106f3d14cb2f84dadee801b275a9b005bb5cf7ef17b01e02b"
+    },
+    {
+      "id": "AUD-30E897",
+      "at": "2026-10-16T17:47:13.523Z",
+      "action": "Paper registered",
+      "detail": "EXAM-B6B008: Demo Mathematics Paper",
+      "previousHash": "f549243b7632b3deffe6b4073b7eb27b2fa3f559bd2d986f4a382d3c68fda621",
+      "hash": "1c0d351cc710ef63203bceae846f4fe187cf41807de774338de7d8a9c697f635"
+    },
+    {
+      "id": "AUD-E85FC5",
+      "at": "2026-10-16T17:30:56.912Z",
+      "action": "Leak analysis recorded",
+      "detail": "CASE-84DF82: Paper identified — source unresolved",
+      "previousHash": "2f841ce7e9feb3e365c4ec4a70f9bda110fe23a857666f8eb65633d197050988",
+      "hash": "f549243b7632b3deffe6b4073b7eb27b2fa3f559bd2d986f4a382d3c68fda621"
+    },
+    {
+      "id": "AUD-39CFA2",
+      "at": "2026-10-16T17:25:17.248Z",
+      "action": "Leak analysis recorded",
+      "detail": "CASE-1682ED: Paper identified — source unresolved",
+      "previousHash": "GENESIS",
+      "hash": "2f841ce7e9feb3e365c4ec4a70f9bda110fe23a857666f8eb65633d197050988"
+    }
+  ],
+  "security": {
+    "lastAuditHash": "e471c098fdabd1126d6de5c6088ed5b307809e3b0d3e33d2c4bbd5933e3d07cf"
+  }
+}
