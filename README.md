@@ -23,7 +23,13 @@ Open `http://localhost:3000`.
 
 The browser payload is an educational/demo robust-marking layer, not production-grade security. A production deployment should use a validated print-camera watermark algorithm (DCT/DWT plus error correction), server-side encrypted key management, authenticated accounts, object storage, a real database, and legal/investigative review.
 
-## Deploy to GitHub
+## Deploy on Render
+
+This repository includes a Render Blueprint. In Render, choose **New → Blueprint**, connect this repository, and deploy the `paper-trace-ai` web service. Render assigns it a public `onrender.com` URL.
+
+This is a public demo with no sign-in. Do not enter real exam papers, recipient details, or investigation data. The app stores data in `data.json`; Render's free service has an ephemeral filesystem, so demo changes can be lost after restarts, redeploys, or idle spin-downs. Use a persistent database and add authentication before production use.
+
+## Deploy with Git
 
 ```powershell
 git init
@@ -34,4 +40,4 @@ git remote add origin https://github.com/YOUR-USERNAME/papertrace-ai.git
 git push -u origin main
 ```
 
-For a public demo, deploy the same repository on Render/Railway as a Node service with start command `node server.js`. Persistent disk/database must be configured for production so `data.json` is not ephemeral.
+The app can also run locally with `node server.js`; Render runs the same Node server using `npm start`.
