@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
+
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'data.json');
 const MIME = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'application/javascript; charset=utf-8', '.json':'application/json; charset=utf-8' };
@@ -19,6 +20,7 @@ function audit(db, action, detail) { const at=new Date().toISOString(), previous
 function auditIntact(db) { let previous='GENESIS'; for(const item of [...db.audit].reverse()) { if(item.previousHash !== previous || item.hash !== sign(`${previous}|${item.at}|${item.action}|${item.detail}`)) return false; previous=item.hash; } return true; }
 function body(req) { return new Promise((resolve,reject) => { let raw=''; req.on('data', c => { raw += c; if(raw.length > 2e6) req.destroy(); }); req.on('end', () => { try { resolve(raw ? JSON.parse(raw) : {}); } catch(e) { reject(e); } }); }); }
 function send(res, status, value) { res.writeHead(status, {'Content-Type':'application/json; charset=utf-8'}); res.end(JSON.stringify(value)); }
+
 
 const server = http.createServer(async (req,res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
@@ -37,7 +39,7 @@ const server = http.createServer(async (req,res) => {
         db.copies.unshift(copy); audit(db,'Personalised copy issued', `${copy.id} issued to ${copy.recipient}`); writeDb(db); result={copy,paper};
       } else if (req.method === 'POST' && url.pathname === '/api/incidents') {
         const p=await body(req); const paper=db.papers.find(x=>x.id===p.paperId); const copy=db.copies.find(x=>x.id===p.copyId);
-        const incident={id:id('CASE'), at:new Date().toISOString(), fileName:p.fileName||'uploaded evidence', evidenceHash:p.evidenceHash||null, mlAnalysis:p.mlAnalysis||null, paperId:paper?.id||null, copyId:copy?.id||null, watermarkScore:Number(p.watermarkScore)||0, documentScore:Number(p.documentScore)||0, evidence:p.evidence||[], status:copy?'Potential copy match':'Paper identified — source unresolved'};
+        const incident={id:id('CASE'), at:new Date().toISOString(), fileName:p.fileName||'uploaded evidence', evidenceHash:p.evidenceHash||null, mlAnalysis:p.mlAnalysis||null, paperId:paper?.id||null, copyId:copy?.id||null, watermarkScore:Number(p.watermarkScore)||0, documentScore:Number(p.documentScore)||0, evidence:p.evidence||[], status:copy?'Potential copy match':paper?'Potential paper match':'No reliable match'};
         db.incidents.unshift(incident); audit(db,'Leak analysis recorded', `${incident.id}: ${incident.status}`); writeDb(db); result=incident;
       } else if (req.method === 'POST' && url.pathname === '/api/reset-demo') { writeDb(structuredClone(initial)); result={ok:true}; }
       else return send(res,404,{error:'Not found'});
@@ -51,3 +53,4 @@ const server = http.createServer(async (req,res) => {
   fs.readFile(file,(err,content)=>{ if(err){res.writeHead(404);res.end('Not found');return;} res.writeHead(200,{'Content-Type':MIME[path.extname(file)]||'application/octet-stream'});res.end(content); });
 });
 server.listen(process.env.PORT || 3000, () => console.log('PaperTrace AI running at http://localhost:3000'));
+
